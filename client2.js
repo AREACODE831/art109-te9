@@ -10,7 +10,7 @@ import * as THREE from "./build/three.module.js";
 import { OrbitControls } from "./src/OrbitControls.js";
 import { GLTFLoader } from "./src/GLTFLoader.js";
 
-//Identify div in HTML to place scene
+//'space'=id, and in html, I can call this client2 loading page to html.
 var container = document.getElementById("space");
 
 //Create scene
@@ -30,14 +30,14 @@ renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
 container.appendChild(renderer.domElement);
 
 // Material to be added to model
-var newMaterial = new THREE.MeshStandardMaterial({ color: 0x2E5939 });
+var newMaterial = new THREE.MeshStandardMaterial({ color: 0x6863F2 });
 
 // Variable for GLTF data
 var mesh;
 
 // Load GLTF model, add material, and add it to the scene
 const loader = new GLTFLoader().load(
-  "./assets/testing123fogv3.glb", // comment this line out and un comment the line below to swithc models
+  "./assets/bearemission.glb", // comment this line out and un comment the line below to swithc models
   //"./assets/gourd_web.glb", //<-- photogrammetery model
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
@@ -48,9 +48,9 @@ const loader = new GLTFLoader().load(
     });
     // set position and scale
     mesh = gltf.scene;
-    mesh.position.set(0, 0, 0);
-    mesh.rotation.set(45, 0, 0);
-    mesh.scale.set(.2, .2, .2); // <-- change this to (1, 1, 1) for photogrammetery model
+    mesh.position.set(0, 0.3, 0);
+    mesh.rotation.set(0, 330, 0);
+    mesh.scale.set(.4, .4, .4); // <-- change this to (1, 1, 1) for photogrammetery model
     // Add model to scene
     scene.add(mesh);
   },
