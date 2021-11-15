@@ -42,7 +42,7 @@
    var mouse = new THREE.Vector2();
 
    var geometry = new THREE.BoxGeometry(1, 1, 1);
-   var material = new THREE.MeshLambertMaterial({color: 0xF7F7F7});
+   var material = new THREE.MeshLambertMaterial({color: 0xF2F2F0});
    //var mesh = new THREE.Mesh(geometry, material);
 
    //scene.add(mesh);
@@ -50,7 +50,7 @@
    meshX = -10;
    for(var i = 0; i<15;i++) {
        var mesh = new THREE.Mesh(geometry, material);
-       mesh.position.x = (Math.random() - 0.5) * 10;
+       mesh.position.x = (Math.random() - 0.5) * 20;
        mesh.position.y = (Math.random() - 0.5) * 10;
        mesh.position.z = (Math.random() - 0.5) * 10;
        scene.add(mesh);
@@ -58,7 +58,7 @@
    }
 
 
-   var light = new THREE.PointLight(0xFFFFFF, 1, 1000)
+   var light = new THREE.PointLight(0xABA0F2, 1, 1000)
    light.position.set(0,0,0);
    scene.add(light);
 
@@ -84,7 +84,7 @@
        var intersects = raycaster.intersectObjects(scene.children, true);
        for (var i = 0; i < intersects.length; i++) {
            this.tl = new TimelineMax();
-           this.tl.to(intersects[i].object.scale, 1, {x: 2, ease: Expo.easeOut})
+           this.tl.to(intersects[i].object.scale, 1, {x: 1.5, ease: Expo.easeOut})
            this.tl.to(intersects[i].object.scale, .5, {x: .5, ease: Expo.easeOut})
            this.tl.to(intersects[i].object.position, .5, {x: 2, ease: Expo.easeOut})
            this.tl.to(intersects[i].object.rotation, .5, {y: Math.PI*.5, ease: Expo.easeOut}, "=-1.5")
@@ -98,7 +98,9 @@
 </script>
 
 
-
+<p class="move-mid">
+  <a href="./">Back to main page</a>
+</p>
 
     <!--These divs contain the overlay text and are made invisible by functions within the client3.js script.-->
     <!-- <div id="blocker">
