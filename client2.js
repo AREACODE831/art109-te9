@@ -9,12 +9,15 @@ import * as THREE from "./build/three.module.js";
 // Import add-ons for GLTF models and orbit controls
 import { OrbitControls } from "./src/OrbitControls.js";
 import { GLTFLoader } from "./src/GLTFLoader.js";
+// let container, camera, scene, renderer;
 
 //'space'=id, and in html, I can call this client2 loading page to html.
 var container = document.getElementById("space");
 
 //Create scene
 const scene = new THREE.Scene();
+
+
 const camera = new THREE.PerspectiveCamera(
   50,
   window.innerWidth / window.innerHeight,
@@ -39,6 +42,10 @@ var mesh;
 const loader = new GLTFLoader().load(
   "./assets/bearemission.glb", // comment this line out and un comment the line below to swithc models
   //"./assets/gourd_web.glb", //<-- photogrammetery model
+
+
+
+
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
     gltf.scene.traverse(function(child) {
